@@ -1,0 +1,227 @@
+{
+  "model_name": "AgroSenseNet-v1.0",
+  "framework": "PyTorch 2.14.0+cpu",
+  "architecture": "4-Block Conv2D + BatchNorm + AdaptiveAvgPool + Dense Classifier",
+  "num_classes": 12,
+  "classes": [
+    "Tomato___Early_blight",
+    "Tomato___Late_blight",
+    "Tomato___healthy",
+    "Potato___Early_blight",
+    "Potato___Late_blight",
+    "Potato___healthy",
+    "Corn___Common_rust",
+    "Corn___healthy",
+    "Rice___Leaf_blast",
+    "Rice___Brown_spot",
+    "Pepper_bell___Bacterial_spot",
+    "Apple___Black_rot"
+  ],
+  "class_info": {
+    "Tomato___Early_blight": {
+      "crop": "Tomato",
+      "disease": "Early Blight (Alternaria solani)",
+      "tamil_name": "தக்காளி இலைக்கருகல் நோய்",
+      "severity": "Moderate to High",
+      "pathogen": "Fungal",
+      "favorable_conditions": "Warm temps (24-29°C) and heavy dew or rain periods.",
+      "symptoms": [
+        "Concentric dark brown rings",
+        "Yellow halo around spots",
+        "Lower leaf yellowing"
+      ]
+    },
+    "Tomato___Late_blight": {
+      "crop": "Tomato",
+      "disease": "Late Blight (Phytophthora infestans)",
+      "tamil_name": "தக்காளி பின் பருவக் கருகல் நோய்",
+      "severity": "Severe / Critical",
+      "pathogen": "Oomycete / Water mold",
+      "favorable_conditions": "High humidity (>85%) and cool to moderate temps (15-22°C).",
+      "symptoms": [
+        "Water-soaked dark lesions",
+        "White fungal fuzzy growth on underside",
+        "Rapid collapse"
+      ]
+    },
+    "Tomato___healthy": {
+      "crop": "Tomato",
+      "disease": "Healthy Plant (No Pathogen Detected)",
+      "tamil_name": "ஆரோக்கியமான தக்காளி செடி",
+      "severity": "None",
+      "pathogen": "None",
+      "favorable_conditions": "Balanced soil moisture, pH 6.0-6.8, moderate sunlight.",
+      "symptoms": [
+        "Vibrant green foliage",
+        "Uniform leaf texture",
+        "No necrotic spots"
+      ]
+    },
+    "Potato___Early_blight": {
+      "crop": "Potato",
+      "disease": "Early Blight (Alternaria solani)",
+      "tamil_name": "உருளைக்கிழங்கு ஆரம்பக் கருகல்",
+      "severity": "Moderate",
+      "pathogen": "Fungal",
+      "favorable_conditions": "Alternating wet and dry periods, temp 22-28°C.",
+      "symptoms": [
+        "Target-board brown spots",
+        "Premature defoliation",
+        "Stunted tuber development"
+      ]
+    },
+    "Potato___Late_blight": {
+      "crop": "Potato",
+      "disease": "Late Blight (Phytophthora infestans)",
+      "tamil_name": "உருளைக்கிழங்கு பின் கருகல்",
+      "severity": "Severe / Critical",
+      "pathogen": "Oomycete",
+      "favorable_conditions": "Cool wet weather (12-20°C) with persistent fog or rain.",
+      "symptoms": [
+        "Irregular water-soaked spots",
+        "Rapid leaf rot",
+        "Brown stem lesions"
+      ]
+    },
+    "Potato___healthy": {
+      "crop": "Potato",
+      "disease": "Healthy Plant",
+      "tamil_name": "ஆரோக்கியமான உருளை செடி",
+      "severity": "None",
+      "pathogen": "None",
+      "favorable_conditions": "Well-drained sandy loam soil, temp 18-24°C.",
+      "symptoms": [
+        "Lush green compound leaves",
+        "No spots or chlorosis"
+      ]
+    },
+    "Corn___Common_rust": {
+      "crop": "Corn (Maize)",
+      "disease": "Common Rust (Puccinia sorghi)",
+      "tamil_name": "சோளத் துரு நோய்",
+      "severity": "Moderate to High",
+      "pathogen": "Fungal (Basidiomycete)",
+      "favorable_conditions": "Cool to mild temps (16-25°C) and high relative humidity (>95%).",
+      "symptoms": [
+        "Cinnamon-brown pustules on both leaf surfaces",
+        "Chlorotic flecks",
+        "Powdery spores"
+      ]
+    },
+    "Corn___healthy": {
+      "crop": "Corn (Maize)",
+      "disease": "Healthy Plant",
+      "tamil_name": "ஆரோக்கியமான சோளப் பயிர்",
+      "severity": "None",
+      "pathogen": "None",
+      "favorable_conditions": "Full sun, deep fertile soil, warm climate (22-30°C).",
+      "symptoms": [
+        "Glossy broad green leaves",
+        "Strong central midrib",
+        "Zero fungal pustules"
+      ]
+    },
+    "Rice___Leaf_blast": {
+      "crop": "Rice (Paddy)",
+      "disease": "Leaf Blast (Magnaporthe oryzae)",
+      "tamil_name": "நெல் இலைக் குலை நோய்",
+      "severity": "Critical",
+      "pathogen": "Fungal",
+      "favorable_conditions": "High relative humidity (>90%), temp 20-28°C, excessive nitrogen.",
+      "symptoms": [
+        "Spindle-shaped elliptical spots with grey/white centers and brown margins",
+        "Lesion coalescing"
+      ]
+    },
+    "Rice___Brown_spot": {
+      "crop": "Rice (Paddy)",
+      "disease": "Brown Spot (Bipolaris oryzae)",
+      "tamil_name": "நெல் பழுப்பு புள்ளி நோய்",
+      "severity": "Moderate to High",
+      "pathogen": "Fungal",
+      "favorable_conditions": "Nutrient-deficient soils (low potash/silicon), high humidity, temp 25-30°C.",
+      "symptoms": [
+        "Circular to oval brown lesions",
+        "Yellow halo surrounding spots",
+        "Poor grain filling"
+      ]
+    },
+    "Pepper_bell___Bacterial_spot": {
+      "crop": "Bell Pepper",
+      "disease": "Bacterial Spot (Xanthomonas campestris)",
+      "tamil_name": "குடைமிளகாய் பாக்டீரியா புள்ளி நோய்",
+      "severity": "High",
+      "pathogen": "Bacterial",
+      "favorable_conditions": "Warm temperatures (24-30°C) with frequent rain or overhead sprinkler irrigation.",
+      "symptoms": [
+        "Small water-soaked blister lesions",
+        "Ragged brown leaf margins",
+        "Premature fruit drop"
+      ]
+    },
+    "Apple___Black_rot": {
+      "crop": "Apple",
+      "disease": "Black Rot (Botryosphaeria obtusa)",
+      "tamil_name": "ஆப்பிள் கறுப்பு அழுகல் நோய்",
+      "severity": "High",
+      "pathogen": "Fungal",
+      "favorable_conditions": "Warm wet conditions, pruning wounds, temperature 20-27°C.",
+      "symptoms": [
+        "Frog-eye leaf spots",
+        "Purplish red specks expanding into necrotic zones",
+        "Canker formation"
+      ]
+    }
+  },
+  "input_shape": [
+    3,
+    224,
+    224
+  ],
+  "training_epochs": 8,
+  "final_accuracy": 79.17,
+  "history": {
+    "train_loss": [
+      1.9072,
+      0.8894,
+      0.7156,
+      0.6265,
+      0.4793,
+      0.4171,
+      0.4004,
+      0.4065
+    ],
+    "val_loss": [
+      0.9816,
+      1.0263,
+      0.6658,
+      0.4099,
+      0.4049,
+      0.3583,
+      0.3512,
+      0.3536
+    ],
+    "train_acc": [
+      31.3,
+      61.3,
+      69.63,
+      68.89,
+      72.04,
+      74.44,
+      73.89,
+      72.96
+    ],
+    "val_acc": [
+      64.58,
+      56.94,
+      72.92,
+      72.22,
+      74.31,
+      75.0,
+      77.78,
+      79.17
+    ]
+  },
+  "trained_at": "2026-10-26 17:29:55 UTC",
+  "status": "TRAINED_AND_VERIFIED"
+}
